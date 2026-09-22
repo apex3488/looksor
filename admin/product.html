@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Товар — LOOKSÒR</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+  <script>window.LOOKSOR_BASE = '../';</script>
+</head>
+<body class="admin" data-admin="product">
+  <div class="admin-top">
+    <a class="brand" href="index.html">LOOKSÒR</a>
+    <button class="menu-toggle" type="button" data-admin-menu>Меню</button>
+  </div>
+  <aside id="admin-aside">
+    <a class="brand desktop-brand" href="index.html">LOOKSÒR</a>
+    <div class="nav-label">Магазин</div>
+    <a href="index.html">Товары</a>
+    <a class="is-on" href="product.html">Новый товар</a>
+    <a href="categories.html">Категории</a>
+    <a href="media.html">Фото сайта</a>
+    <a href="settings.html">Контакты</a>
+    <a href="orders.html">Заказы</a>
+    <div class="nav-label">Прочее</div>
+    <a href="../index.html" target="_blank">Открыть сайт</a>
+    <a href="#" id="logout-link">Выйти</a>
+  </aside>
+  <main class="admin-main">
+    <div class="page-head">
+      <div>
+        <h1>Товар</h1>
+        <p>Фото сохраняется сразу после выбора файла.</p>
+      </div>
+    </div>
+    <form id="product-form" class="form">
+      <div class="form-grid">
+        <label class="field">Артикул <input name="article" required></label>
+        <label class="field">Категория <select name="category_id" id="category_id"></select></label>
+        <label class="field">Название RU <input name="name_ru" required></label>
+        <label class="field">Название UZ <input name="name_uz" required></label>
+        <label class="field">Название EN <input name="name_en" required></label>
+        <label class="field">Цена, сум <input name="price" type="number" required></label>
+        <label class="field">Старая цена, сум <span>Для Sale. Можно оставить пустым.</span>
+          <input name="old_price" type="number">
+        </label>
+        <label class="field">Остаток <input name="stock" type="number" value="1"></label>
+        <label class="field">Размеры <span>Через запятую, например XS,S,M,L,XL</span>
+          <input name="sizes" value="XS,S,M,L,XL">
+        </label>
+      </div>
+      <label class="field">Описание RU <textarea name="description_ru" rows="4"></textarea></label>
+      <label class="field">Описание UZ <textarea name="description_uz" rows="4"></textarea></label>
+      <label class="field">Описание EN <textarea name="description_en" rows="4"></textarea></label>
+      <label class="field">Цвета <span>Каждая строка: HEX|Русский|Узбекский|English</span>
+        <textarea name="colors" rows="5" placeholder="#EFE9D9|Кремовый|Krem|Cream"></textarea>
+      </label>
+      <label class="check"><input type="checkbox" name="is_active" checked> В наличии / активен</label>
+      <label class="check"><input type="checkbox" name="featured"> Показывать на главной</label>
+      <label class="check"><input type="checkbox" name="bestseller"> Bestseller</label>
+      <label class="check"><input type="checkbox" name="is_new"> Новинка</label>
+      <label class="field" id="create-photos">Фото при создании
+        <input type="file" name="images[]" accept="image/jpeg,image/png,image/webp,image/gif" multiple>
+      </label>
+      <button class="btn" type="submit">Сохранить данные товара</button>
+      <a class="btn btn-ghost" id="open-site" hidden target="_blank">Открыть на сайте</a>
+    </form>
+    <section id="photo-section" hidden>
+      <h2>Фото товара</h2>
+      <p class="hint">Выберите файл — он сразу запишется в Storage.</p>
+      <div class="photo-grid" id="photo-grid"></div>
+      <form id="add-photos" class="form">
+        <label class="field">Добавить новые фото
+          <input type="file" name="more" accept="image/jpeg,image/png,image/webp,image/gif" multiple required>
+        </label>
+        <button class="btn" type="submit">Загрузить фото</button>
+      </form>
+    </section>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="../js/admin.js"></script>
+</body>
+</html>

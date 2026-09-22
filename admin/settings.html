@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Контакты — LOOKSÒR</title>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+  <script>window.LOOKSOR_BASE = '../';</script>
+</head>
+<body class="admin" data-admin="settings">
+  <div class="admin-top">
+    <a class="brand" href="index.html">LOOKSÒR</a>
+    <button class="menu-toggle" type="button" data-admin-menu>Меню</button>
+  </div>
+  <aside id="admin-aside">
+    <a class="brand desktop-brand" href="index.html">LOOKSÒR</a>
+    <div class="nav-label">Магазин</div>
+    <a href="index.html">Товары</a>
+    <a href="product.html">Новый товар</a>
+    <a href="categories.html">Категории</a>
+    <a href="media.html">Фото сайта</a>
+    <a class="is-on" href="settings.html">Контакты</a>
+    <a href="orders.html">Заказы</a>
+    <div class="nav-label">Прочее</div>
+    <a href="../index.html" target="_blank">Открыть сайт</a>
+    <a href="#" id="logout-link">Выйти</a>
+  </aside>
+  <main class="admin-main">
+    <div class="page-head">
+      <div>
+        <h1>Контакты</h1>
+        <p>Телефон и часы в футере показываются отдельно.</p>
+      </div>
+    </div>
+    <form id="settings-form" class="form">
+      <label class="field">Название бренда <input name="brand_name"></label>
+      <label class="field">Telegram URL <span>Единая ссылка менеджера. Заказы открывают её.</span>
+        <input name="telegram_url" placeholder="https://t.me/APEX348">
+      </label>
+      <label class="field">Telegram username <input name="telegram_username"></label>
+      <label class="field">Телефон <input name="phone"></label>
+      <label class="field">Email <input name="email"></label>
+      <label class="field">Instagram URL <input name="instagram"></label>
+      <label class="field">Часы работы <input name="hours"></label>
+      <label class="field">Текст доставки RU <textarea name="delivery_note_ru" rows="3"></textarea></label>
+      <label class="field">Текст доставки UZ <textarea name="delivery_note_uz" rows="3"></textarea></label>
+      <label class="field">Текст доставки EN <textarea name="delivery_note_en" rows="3"></textarea></label>
+      <button class="btn" type="submit">Сохранить контакты</button>
+    </form>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="../js/admin.js"></script>
+</body>
+</html>

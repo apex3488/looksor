@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LOOKSÒR Admin</title>
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@300;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+  <script>window.LOOKSOR_BASE = '../';</script>
+</head>
+<body class="admin-login" data-admin="login">
+  <form id="login-form" class="login-card">
+    <h1>LOOKSÒR</h1>
+    <p style="text-align:center;color:#5A493B">Админ-панель магазина</p>
+    <p class="err" id="login-error"></p>
+    <label class="field">Email <input name="email" type="email" required autocomplete="username"></label>
+    <label class="field">Пароль <input name="password" type="password" required autocomplete="current-password"></label>
+    <button class="btn" type="submit">Войти</button>
+    <p style="font-size:12px;color:#5A493B">Вход через Supabase Auth. Пароль не хранится в JavaScript.</p>
+  </form>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="../js/admin.js"></script>
+</body>
+</html>
