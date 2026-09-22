@@ -242,7 +242,7 @@ function renderProduct() {
   let qty = 1;
   const colorName = (c) => c[i18nState.lang] || c.ru || c.hex;
   root.innerHTML = `
-    <div>
+    <div class="pdp-gallery">
       <div class="gallery-main"><img id="g-main" src="${imgSrc(imgs[0])}" alt="${loc(p.name)}"></div>
       <div class="thumbs">${imgs.map((src, i) => `<button type="button" class="${i===0?'is-active':''}" data-img="${imgSrc(src)}"><img src="${imgSrc(src)}" alt="" loading="lazy"></button>`).join('')}</div>
     </div>
